@@ -1,6 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 
-namespace pa1
+namespace pa1_ngdiroberto321
 {
     class Program
     {
@@ -34,19 +35,13 @@ namespace pa1
 
             switch(input){
                 case "1":
-                    //Show.Run();
-                    Console.WriteLine("Run Show Function...");
-                    Console.ReadKey();
+                    ShowPosts();
                     return;
                 case "2":
-                    //Add.Run();
-                    Console.WriteLine("Run Add Function...");
-                    Console.ReadKey();
+                    AddPost();
                     return;
                 case "3":
-                    //Delete.Run();
-                    Console.WriteLine("Run Delete Function...");
-                    Console.ReadKey();
+                    DeletePost();
                     return;
                 case "4":
                     return;
@@ -56,6 +51,18 @@ namespace pa1
                     Console.ReadKey();
                     return;
             }
+        }
+
+        public void ShowPosts(){
+
+        }
+
+        public void AddPost(){
+
+        }
+
+        public void DeletePost(){
+
         }
     }
 }
