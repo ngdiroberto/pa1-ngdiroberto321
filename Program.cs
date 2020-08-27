@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 
 namespace pa1_ngdiroberto321
 {
@@ -7,16 +8,15 @@ namespace pa1_ngdiroberto321
     {
         static void Main(string[] args)
         {
+            //File.Clone();
             String input = "";
 
-            while(true){
-                PrintMenuOptions(); //Prints menu options to console
-                ValidateMenuChoice(ref input); //facilitates menu option selection
-                if(input.CompareTo("4")==0){
-                    Console.Clear();
-                    return;
-                }
+            while(input.CompareTo("4")!=0){
+                PrintMenuOptions(); 
+                ValidateMenuChoice(ref input); 
             }
+
+            //File.Save();
         }
 
         public static void PrintMenuOptions(){
@@ -36,32 +36,40 @@ namespace pa1_ngdiroberto321
             switch(input){
                 case "1":
                     ShowPosts();
-                    return;
+                    break;
                 case "2":
                     AddPost();
-                    return;
+                    break;
                 case "3":
                     DeletePost();
-                    return;
+                    break;
                 case "4":
-                    return;
+                    break;
                 default:
-                    Console.Clear();
                     Console.WriteLine("ERROR: Menu option not found.\nPress any key to continue...");
                     Console.ReadKey();
-                    return;
+                    break;
             }
         }
 
-        public void ShowPosts(){
+        public static void ShowPosts(){
+            List<Post> allPosts = FileControl.PostList;
+            int count = 0;
+
+            Console.WriteLine("All Posts\n---------");
+            foreach(Post post in allPosts){
+                Console.WriteLine("\t" + post.ID + "" + post.PostText + "" + post.Date);
+                count++;
+            }
+            Console.WriteLine("\n" + count + " posts shown.\nPress any key to continue...");
+            Console.ReadKey();
+        }
+
+        public static void AddPost(){
 
         }
 
-        public void AddPost(){
-
-        }
-
-        public void DeletePost(){
+        public static void DeletePost(){
 
         }
     }
