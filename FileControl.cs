@@ -26,8 +26,25 @@ namespace pa1_ngdiroberto321
         }
 
         public static void Clone(){
-            StreamReader inFile = new StreamReader("posts.txt");
-
+            try{
+                List<Post> temp = new List<Post>();
+                StreamReader inFile= new StreamReader("posts.txt");
+                
+                String input = inFile.ReadLine();
+                while(input != null){
+                    String[] array = input.Split('#');
+                    temp.Add(new Post(){ID = array[0], PostText = array[1], Date = array[2]});
+                    input = inFile.ReadLine();
+                }
+                
+                inFile.Close();
+                posts = temp;
+            }
+            catch (Exception e){
+            Console.WriteLine("ERROR: File cannot be opened");
+            Console.WriteLine(e.Message);
+            Console.ReadKey();
+            }
         }
     }
 }

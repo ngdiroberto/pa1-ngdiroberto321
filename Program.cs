@@ -8,15 +8,13 @@ namespace pa1_ngdiroberto321
     {
         static void Main(string[] args)
         {
-            //File.Clone();
+            FileControl.Clone();
             String input = "";
 
             while(input.CompareTo("4")!=0){
                 PrintMenuOptions(); 
                 ValidateMenuChoice(ref input); 
             }
-
-            //File.Save();
         }
 
         public static void PrintMenuOptions(){
@@ -58,7 +56,7 @@ namespace pa1_ngdiroberto321
 
             Console.WriteLine("All Posts\n---------");
             foreach(Post post in allPosts){
-                Console.WriteLine("\t" + post.ID + "" + post.PostText + "" + post.Date);
+                Console.WriteLine("\t" + post.ToString());
                 count++;
             }
             Console.WriteLine("\n" + count + " posts shown.\nPress any key to continue...");
