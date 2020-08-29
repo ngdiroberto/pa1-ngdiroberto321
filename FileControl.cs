@@ -21,7 +21,6 @@ namespace pa1_ngdiroberto321
                 String input = post.ID + "#" + post.PostText + "#" + post.Date;
                 outFile.WriteLine(input);
             }
-
             outFile.Close();
         }
 
@@ -41,9 +40,9 @@ namespace pa1_ngdiroberto321
                 posts = temp;
             }
             catch (Exception e){
-            Console.WriteLine("ERROR: File cannot be opened");
-            Console.WriteLine(e.Message);
-            Console.ReadKey();
+                Console.WriteLine("ERROR: File cannot be opened");
+                Console.WriteLine(e.Message);
+                Console.ReadKey();
             }
         }
     }

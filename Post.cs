@@ -10,7 +10,7 @@ namespace pa1_ngdiroberto321
         public string Date{get; set;}
 
         public string ToString(){
-            return this.ID + " " + this.PostText + " " + this.Date + " ";
+            return this.ID + "\t" + this.PostText + "\t" + this.Date;
         }
     }
 }
