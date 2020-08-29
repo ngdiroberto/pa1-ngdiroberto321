@@ -76,8 +76,12 @@ namespace pa1_ngdiroberto321
             Console.Clear();
 
             allPosts.Add(new Post(){ID = id, PostText = text, Date = currTime.ToString()});
+            allPosts.Sort();
+            allPosts.Reverse();
+            
             FileControl.PostList = allPosts;
             FileControl.Save();
+
             Console.WriteLine("Post created successfully.\nPress any key to continue...");
             Console.ReadKey();
             Console.Clear();
@@ -103,6 +107,9 @@ namespace pa1_ngdiroberto321
             try{
                 int value = int.Parse(input) - 1;
                 allPosts.RemoveAt(value);
+                allPosts.Sort();
+                allPosts.Reverse();
+
                 FileControl.PostList = allPosts;
                 FileControl.Save();
 

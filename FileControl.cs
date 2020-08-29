@@ -35,12 +35,13 @@ namespace pa1_ngdiroberto321
                     temp.Add(new Post(){ID = array[0], PostText = array[1], Date = array[2]});
                     input = inFile.ReadLine();
                 }
-                
+                temp.Sort();
+                temp.Reverse();
                 inFile.Close();
                 posts = temp;
             }
             catch (Exception e){
-                Console.WriteLine("ERROR: File cannot be opened");
+                Console.WriteLine("ERROR: File has failed to open correctly. Please restart application.");
                 Console.WriteLine(e.Message);
                 Console.ReadKey();
             }
