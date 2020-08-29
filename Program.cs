@@ -6,7 +6,7 @@ namespace pa1_ngdiroberto321
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main(string[] args) //Flow of control
         {
             FileControl.Clone();
             String input = "";
@@ -17,7 +17,7 @@ namespace pa1_ngdiroberto321
             }
         }
 
-        public static void PrintMenuOptions(){
+        public static void PrintMenuOptions(){ //Print menu strings
             Console.Clear();
             Console.WriteLine("Big Al Goes Social");
             Console.WriteLine(" 1.\tShow All Posts");
@@ -26,7 +26,7 @@ namespace pa1_ngdiroberto321
             Console.WriteLine(" 4.\tExit\n");
         }
 
-        public static void ValidateMenuChoice(ref String input){
+        public static void ValidateMenuChoice(ref String input){ //Validates menu input and runs appropriate functionality
             Console.Write("Please select menu choice and press enter to confirm: ");
             input = Console.ReadLine();
             Console.Clear();
@@ -50,7 +50,7 @@ namespace pa1_ngdiroberto321
             }
         }
 
-        public static void ShowPosts(){
+        public static void ShowPosts(){ //Prints all elements in post list
             List<Post> allPosts = FileControl.PostList;
             int count = 0;
 
@@ -64,7 +64,7 @@ namespace pa1_ngdiroberto321
             Console.Clear();
         }
 
-        public static void AddPost(){
+        public static void AddPost(){ //Adds post object to list
             List<Post> allPosts = FileControl.PostList;
             Guid g = Guid.NewGuid();
             string id = g.ToString();
@@ -78,7 +78,7 @@ namespace pa1_ngdiroberto321
             allPosts.Add(new Post(){ID = id, PostText = text, Date = currTime.ToString()});
             allPosts.Sort();
             allPosts.Reverse();
-            
+
             FileControl.PostList = allPosts;
             FileControl.Save();
 
@@ -87,7 +87,7 @@ namespace pa1_ngdiroberto321
             Console.Clear();
         }
 
-        public static void DeletePost(){
+        public static void DeletePost(){ //deletes post object from list
             List<Post> allPosts = FileControl.PostList;
             int count = 1;
             Console.WriteLine("All Posts\n---------");

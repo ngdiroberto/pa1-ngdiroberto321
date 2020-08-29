@@ -6,14 +6,14 @@ namespace pa1_ngdiroberto321
 {
     public class FileControl
     {
-        private static List<Post> posts = new List<Post>();
+        private static List<Post> posts = new List<Post>(); //List of Post objects
 
-        public static List<Post> PostList{
+        public static List<Post> PostList{ //Accessor and Mutator for posts list
             get{return posts;} 
             set{posts = value;}
         }
 
-        public static void Save(){
+        public static void Save(){ //saves list to posts.txt file
             File.Create("posts.txt").Close();
             StreamWriter outFile = new StreamWriter("posts.txt", true);
 
@@ -24,7 +24,7 @@ namespace pa1_ngdiroberto321
             outFile.Close();
         }
 
-        public static void Clone(){
+        public static void Clone(){ //clones list from post.txt file at beginning of runtime
             try{
                 List<Post> temp = new List<Post>();
                 StreamReader inFile= new StreamReader("posts.txt");
